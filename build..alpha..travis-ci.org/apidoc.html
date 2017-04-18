@@ -1,0 +1,2534 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+    >restful (v0.4.5)</a>
+</h1>
+<h4>Restful routing using resourceful and director.</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.restful">module restful</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.restful.ResourcefulRouter">
+            function <span class="apidocSignatureSpan">restful.</span>ResourcefulRouter
+            <span class="apidocSignatureSpan">(resource, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.restful.ResourcefulRouter.super_">
+            function <span class="apidocSignatureSpan">restful.</span>ResourcefulRouter.super_
+            <span class="apidocSignatureSpan">(routes)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.restful.ResourcefulRouter.super_.prototype.attach">
+            function <span class="apidocSignatureSpan">restful.</span>ResourcefulRouter.super_.prototype.attach
+            <span class="apidocSignatureSpan">(func)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.restful.ResourcefulRouter.super_.prototype.configure">
+            function <span class="apidocSignatureSpan">restful.</span>ResourcefulRouter.super_.prototype.configure
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.restful.ResourcefulRouter.super_.prototype.dispatch">
+            function <span class="apidocSignatureSpan">restful.</span>ResourcefulRouter.super_.prototype.dispatch
+            <span class="apidocSignatureSpan">(req, res, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.restful.ResourcefulRouter.super_.prototype.on">
+            function <span class="apidocSignatureSpan">restful.</span>ResourcefulRouter.super_.prototype.on
+            <span class="apidocSignatureSpan">(method, path)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.restful.ResourcefulRouter.super_.prototype.parse">
+            function <span class="apidocSignatureSpan">restful.</span>ResourcefulRouter.super_.prototype.parse
+            <span class="apidocSignatureSpan">(req)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.restful.attach">
+            function <span class="apidocSignatureSpan">restful.</span>attach
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.restful.buildResourceId">
+            function <span class="apidocSignatureSpan">restful.</span>buildResourceId
+            <span class="apidocSignatureSpan">(resources, ids)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.restful.createRouter">
+            function <span class="apidocSignatureSpan">restful.</span>createRouter
+            <span class="apidocSignatureSpan">(resource, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.restful.createServer">
+            function <span class="apidocSignatureSpan">restful.</span>createServer
+            <span class="apidocSignatureSpan">(resources, options, handler)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.restful.extendRouter">
+            function <span class="apidocSignatureSpan">restful.</span>extendRouter
+            <span class="apidocSignatureSpan">(router, resources, options, respond)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.restful.init">
+            function <span class="apidocSignatureSpan">restful.</span>init
+            <span class="apidocSignatureSpan">(done)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">restful.</span>ResourcefulRouter.super_.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">restful.</span>ResourcefulRouter.super_.prototype.parsers</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">restful.</span>ResourcefulRouter.super_.super_.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">restful.</span>name</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.restful.ResourcefulRouter">module restful.ResourcefulRouter</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.restful.ResourcefulRouter.ResourcefulRouter">
+            function <span class="apidocSignatureSpan">restful.</span>ResourcefulRouter
+            <span class="apidocSignatureSpan">(resource, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.restful.ResourcefulRouter.super_">
+            function <span class="apidocSignatureSpan">restful.ResourcefulRouter.</span>super_
+            <span class="apidocSignatureSpan">(routes)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.restful.ResourcefulRouter.super_">module restful.ResourcefulRouter.super_</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.restful.ResourcefulRouter.super_.super_">
+            function <span class="apidocSignatureSpan">restful.ResourcefulRouter.</span>super_
+            <span class="apidocSignatureSpan">(routes)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.restful.ResourcefulRouter.super_.prototype">module restful.ResourcefulRouter.super_.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.restful.ResourcefulRouter.super_.prototype.attach">
+            function <span class="apidocSignatureSpan">restful.ResourcefulRouter.super_.prototype.</span>attach
+            <span class="apidocSignatureSpan">(func)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.restful.ResourcefulRouter.super_.prototype.configure">
+            function <span class="apidocSignatureSpan">restful.ResourcefulRouter.super_.prototype.</span>configure
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.restful.ResourcefulRouter.super_.prototype.dispatch">
+            function <span class="apidocSignatureSpan">restful.ResourcefulRouter.super_.prototype.</span>dispatch
+            <span class="apidocSignatureSpan">(req, res, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.restful.ResourcefulRouter.super_.prototype.on">
+            function <span class="apidocSignatureSpan">restful.ResourcefulRouter.super_.prototype.</span>on
+            <span class="apidocSignatureSpan">(method, path)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.restful.ResourcefulRouter.super_.prototype.parse">
+            function <span class="apidocSignatureSpan">restful.ResourcefulRouter.super_.prototype.</span>parse
+            <span class="apidocSignatureSpan">(req)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">restful.ResourcefulRouter.super_.prototype.</span>parsers</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.restful.ResourcefulRouter.super_.prototype.attach">module restful.ResourcefulRouter.super_.prototype.attach</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.restful.ResourcefulRouter.super_.prototype.attach.attach">
+            function <span class="apidocSignatureSpan">restful.ResourcefulRouter.super_.prototype.</span>attach
+            <span class="apidocSignatureSpan">(func)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.restful.ResourcefulRouter.super_.prototype.configure">module restful.ResourcefulRouter.super_.prototype.configure</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.restful.ResourcefulRouter.super_.prototype.configure.configure">
+            function <span class="apidocSignatureSpan">restful.ResourcefulRouter.super_.prototype.</span>configure
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.restful.ResourcefulRouter.super_.prototype.dispatch">module restful.ResourcefulRouter.super_.prototype.dispatch</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.restful.ResourcefulRouter.super_.prototype.dispatch.dispatch">
+            function <span class="apidocSignatureSpan">restful.ResourcefulRouter.super_.prototype.</span>dispatch
+            <span class="apidocSignatureSpan">(req, res, callback)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.restful.ResourcefulRouter.super_.prototype.on">module restful.ResourcefulRouter.super_.prototype.on</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.restful.ResourcefulRouter.super_.prototype.on.on">
+            function <span class="apidocSignatureSpan">restful.ResourcefulRouter.super_.prototype.</span>on
+            <span class="apidocSignatureSpan">(method, path)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.restful.ResourcefulRouter.super_.prototype.parse">module restful.ResourcefulRouter.super_.prototype.parse</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.restful.ResourcefulRouter.super_.prototype.parse.parse">
+            function <span class="apidocSignatureSpan">restful.ResourcefulRouter.super_.prototype.</span>parse
+            <span class="apidocSignatureSpan">(req)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.restful.ResourcefulRouter.super_.prototype.parsers">module restful.ResourcefulRouter.super_.prototype.parsers</a><ol>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.restful.ResourcefulRouter.super_.super_.prototype">module restful.ResourcefulRouter.super_.super_.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.restful.ResourcefulRouter.super_.super_.prototype.configure">
+            function <span class="apidocSignatureSpan">restful.ResourcefulRouter.super_.super_.prototype.</span>configure
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.restful.ResourcefulRouter.super_.super_.prototype.dispatch">
+            function <span class="apidocSignatureSpan">restful.ResourcefulRouter.super_.super_.prototype.</span>dispatch
+            <span class="apidocSignatureSpan">(method, path, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.restful.ResourcefulRouter.super_.super_.prototype.extend">
+            function <span class="apidocSignatureSpan">restful.ResourcefulRouter.super_.super_.prototype.</span>extend
+            <span class="apidocSignatureSpan">(methods)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.restful.ResourcefulRouter.super_.super_.prototype.insert">
+            function <span class="apidocSignatureSpan">restful.ResourcefulRouter.super_.super_.prototype.</span>insert
+            <span class="apidocSignatureSpan">(method, path, route, parent)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.restful.ResourcefulRouter.super_.super_.prototype.invoke">
+            function <span class="apidocSignatureSpan">restful.ResourcefulRouter.super_.super_.prototype.</span>invoke
+            <span class="apidocSignatureSpan">(fns, thisArg, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.restful.ResourcefulRouter.super_.super_.prototype.mount">
+            function <span class="apidocSignatureSpan">restful.ResourcefulRouter.super_.super_.prototype.</span>mount
+            <span class="apidocSignatureSpan">(routes, path)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.restful.ResourcefulRouter.super_.super_.prototype.on">
+            function <span class="apidocSignatureSpan">restful.ResourcefulRouter.super_.super_.prototype.</span>on
+            <span class="apidocSignatureSpan">(method, path, route)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.restful.ResourcefulRouter.super_.super_.prototype.param">
+            function <span class="apidocSignatureSpan">restful.ResourcefulRouter.super_.super_.prototype.</span>param
+            <span class="apidocSignatureSpan">(token, matcher)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.restful.ResourcefulRouter.super_.super_.prototype.path">
+            function <span class="apidocSignatureSpan">restful.ResourcefulRouter.super_.super_.prototype.</span>path
+            <span class="apidocSignatureSpan">(path, routesFn)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.restful.ResourcefulRouter.super_.super_.prototype.route">
+            function <span class="apidocSignatureSpan">restful.ResourcefulRouter.super_.super_.prototype.</span>route
+            <span class="apidocSignatureSpan">(method, path, route)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.restful.ResourcefulRouter.super_.super_.prototype.runlist">
+            function <span class="apidocSignatureSpan">restful.ResourcefulRouter.super_.super_.prototype.</span>runlist
+            <span class="apidocSignatureSpan">(fns)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.restful.ResourcefulRouter.super_.super_.prototype.traverse">
+            function <span class="apidocSignatureSpan">restful.ResourcefulRouter.super_.super_.prototype.</span>traverse
+            <span class="apidocSignatureSpan">(method, path, routes, regexp, filter)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.restful.attach">module restful.attach</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.restful.attach.attach">
+            function <span class="apidocSignatureSpan">restful.</span>attach
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.restful.buildResourceId">module restful.buildResourceId</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.restful.buildResourceId.buildResourceId">
+            function <span class="apidocSignatureSpan">restful.</span>buildResourceId
+            <span class="apidocSignatureSpan">(resources, ids)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.restful.createRouter">module restful.createRouter</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.restful.createRouter.createRouter">
+            function <span class="apidocSignatureSpan">restful.</span>createRouter
+            <span class="apidocSignatureSpan">(resource, options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.restful.createServer">module restful.createServer</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.restful.createServer.createServer">
+            function <span class="apidocSignatureSpan">restful.</span>createServer
+            <span class="apidocSignatureSpan">(resources, options, handler)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.restful.extendRouter">module restful.extendRouter</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.restful.extendRouter.extendRouter">
+            function <span class="apidocSignatureSpan">restful.</span>extendRouter
+            <span class="apidocSignatureSpan">(router, resources, options, respond)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.restful.init">module restful.init</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.restful.init.init">
+            function <span class="apidocSignatureSpan">restful.</span>init
+            <span class="apidocSignatureSpan">(done)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.restful" id="apidoc.module.restful">module restful</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.restful.ResourcefulRouter" id="apidoc.element.restful.ResourcefulRouter">
+        function <span class="apidocSignatureSpan">restful.</span>ResourcefulRouter
+        <span class="apidocSignatureSpan">(resource, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">ResourcefulRouter = function (resource, options) {
+  options = options || {};
+
+  //
+  // ResourcefulRouter inherits from director.http.Router
+  //
+  director.http.Router.call(this, options);
+
+  this.resource = resource;
+  this.strict = options.strict || false;
+
+  exports.extendRouter(this, resource, options);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.restful.ResourcefulRouter.super_" id="apidoc.element.restful.ResourcefulRouter.super_">
+        function <span class="apidocSignatureSpan">restful.</span>ResourcefulRouter.super_
+        <span class="apidocSignatureSpan">(routes)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">ResourcefulRouter.super_ = function (routes) {
+  //
+  // ### Extend the `Router` prototype with all of the RFC methods.
+  //
+  this.params   = {};
+  this.routes   = {};
+  this.methods  = [&#x27;on&#x27;, &#x27;after&#x27;, &#x27;before&#x27;];
+  this.scope    = [];
+  this._methods = {};
+  this.recurse = &#x27;forward&#x27;;
+  this._attach = [];
+
+  this.extend(exports.methods.concat([&#x27;before&#x27;, &#x27;after&#x27;]));
+  this.configure();
+  this.mount(routes || {});
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.restful.ResourcefulRouter.super_.prototype.attach" id="apidoc.element.restful.ResourcefulRouter.super_.prototype.attach">
+        function <span class="apidocSignatureSpan">restful.</span>ResourcefulRouter.super_.prototype.attach
+        <span class="apidocSignatureSpan">(func)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">ResourcefulRouter.super_.prototype.attach = function (func) {
+  this._attach.push(func);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.restful.ResourcefulRouter.super_.prototype.configure" id="apidoc.element.restful.ResourcefulRouter.super_.prototype.configure">
+        function <span class="apidocSignatureSpan">restful.</span>ResourcefulRouter.super_.prototype.configure
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">ResourcefulRouter.super_.prototype.configure = function (options) {
+  options = options || {};
+
+  // useful when using connect&#x27;s bodyParser
+  this.stream = options.stream || false;
+
+  return BaseRouter.prototype.configure.call(this, options);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.restful.ResourcefulRouter.super_.prototype.dispatch" id="apidoc.element.restful.ResourcefulRouter.super_.prototype.dispatch">
+        function <span class="apidocSignatureSpan">restful.</span>ResourcefulRouter.super_.prototype.dispatch
+        <span class="apidocSignatureSpan">(req, res, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">ResourcefulRouter.super_.prototype.dispatch = function (req, res, callback) {
+  //
+  // Dispatch `HEAD` requests to `GET`
+  //
+  var method = req.method === &#x27;HEAD&#x27; ? &#x27;get&#x27; : req.method.toLowerCase(),
+      thisArg = { req: req, res: res },
+      self = this,
+      contentType,
+      runlist,
+      stream,
+      error,
+      fns,
+      url;
+
+  //
+  // Trap bad URLs from `decodeUri`
+  //
+  try { url = decodeURI(req.url.split(&#x27;?&#x27;, 1)[0]); }
+  catch (ex) { url = null }
+
+  if (url &#x26;&#x26; this._hasAccepts) {
+    contentType = req.headers[&#x27;content-type&#x27;];
+    fns = this.traverse(method, url, this.routes, &#x27;&#x27;, function (route) {
+      return !route.accept || route.accept.some(function (a) {
+        return a.test(contentType);
+      });
+    });
+  }
+  else if (url) {
+    fns = this.traverse(method, url, this.routes, &#x27;&#x27;);
+  }
+
+  if (this._attach) {
+    for (var i = 0; i &#x3c; this._attach.length; i++) {
+      this._attach[i].call(thisArg);
+    }
+  }
+
+  if (!fns || fns.length === 0) {
+    error = new exports.NotFound(&#x27;Could not find path: &#x27; + req.url);
+    if (typeof this.notfound === &#x27;function&#x27;) {
+      this.notfound.call(thisArg, callback);
+    }
+    else if (callback) {
+      callback.call(thisArg, error, req, res);
+    }
+    return false;
+  }
+
+  if (this.recurse === &#x27;forward&#x27;) {
+    fns = fns.reverse();
+  }
+
+  runlist = this.runlist(fns);
+  stream  = this.stream || runlist.some(function (fn) { return fn.stream === true; });
+
+  function parseAndInvoke() {
+    error = self.parse(req);
+    if (error) {
+      if (callback) {
+        callback.call(thisArg, error, req, res);
+      }
+      return false;
+    }
+
+    self.invoke(runlist, thisArg, callback);
+  }
+
+  if (!stream) {
+    //
+    // If there is no streaming required on any of the functions on the
+    // way to `path`, then attempt to parse the fully buffered request stream
+    // once it has emitted the `end` event.
+    //
+    if (req.readable) {
+      //
+      // If the `http.ServerRequest` is still readable, then await
+      // the end event and then continue
+      //
+      req.once(&#x27;end&#x27;, parseAndInvoke);
+      // Streams2 requires us to start the stream if we&#x27;re not explicitly
+      // reading from it.
+      req.resume();
+    }
+    else {
+      //
+      // Otherwise, just parse the body now.
+      //
+      parseAndInvoke();
+    }
+  }
+  else {
+    this.invoke(runlist, thisArg, callback);
+  }
+
+  return true;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.restful.ResourcefulRouter.super_.prototype.on" id="apidoc.element.restful.ResourcefulRouter.super_.prototype.on">
+        function <span class="apidocSignatureSpan">restful.</span>ResourcefulRouter.super_.prototype.on
+        <span class="apidocSignatureSpan">(method, path)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">ResourcefulRouter.super_.prototype.on = function (method, path) {
+  var args = Array.prototype.slice.call(arguments, 2),
+      route = args.pop(),
+      options = args.pop(),
+      accept;
+
+  if (options) {
+    if (options.stream) {
+      route.stream = true;
+    }
+
+    if (options.accept) {
+      this._hasAccepts = true;
+      accept = options.accept;
+      route.accept = (Array.isArray(accept) ? accept : [accept]).map(function (a) {
+        return typeof a === &#x27;string&#x27; ? RegExp(a) : a;
+      });
+    }
+  }
+
+  if (typeof path !== &#x27;string&#x27; &#x26;&#x26; !path.source) {
+    path = &#x27;&#x27;;
+  }
+
+  BaseRouter.prototype.on.call(this, method, path, route);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.restful.ResourcefulRouter.super_.prototype.parse" id="apidoc.element.restful.ResourcefulRouter.super_.prototype.parse">
+        function <span class="apidocSignatureSpan">restful.</span>ResourcefulRouter.super_.prototype.parse
+        <span class="apidocSignatureSpan">(req)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">ResourcefulRouter.super_.prototype.parse = function (req) {
+  function mime(req) {
+    var str = req.headers[&#x27;content-type&#x27;] || &#x27;&#x27;;
+    return str.split(&#x27;;&#x27;)[0];
+  }
+
+  var parser = this.parsers[mime(req)],
+      body;
+
+  if (parser) {
+    req.body = req.body || &#x27;&#x27;;
+
+    if (req.chunks) {
+      req.chunks.forEach(function (chunk) {
+        req.body += chunk;
+      });
+    }
+
+    if (&#x27;string&#x27; === typeof req.body) {
+      try {
+        req.body = req.body &#x26;&#x26; req.body.length
+          ? parser(req.body)
+          : {};
+      }
+      catch (err) {
+        return new exports.BadRequest(&#x27;Malformed data&#x27;);
+      }
+    }
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.restful.attach" id="apidoc.element.restful.attach">
+        function <span class="apidocSignatureSpan">restful.</span>attach
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">attach = function (options) {
+  var app = this;
+  if (app.resources) {
+    Object.keys(app.resources).forEach(function (resource) {
+      resourceful.register(resource, app.resources[resource]);
+    });
+    Object.keys(app.resources).forEach(function (resource) {
+      var _options = options || app.resources[resource].restful || {};
+      //
+      // Only exposes resources as restful if they have set:
+      //
+      //     Resource.restful = true;
+      //     Resource.restful = { param: &#x27;:custom&#x27; };
+      //
+      if (app.resources[resource].restful) {
+        exports.extendRouter(
+          app.router,
+          app.resources[resource],
+          _options,
+          _options.respond
+        );
+      }
+    });
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.restful.buildResourceId" id="apidoc.element.restful.buildResourceId">
+        function <span class="apidocSignatureSpan">restful.</span>buildResourceId
+        <span class="apidocSignatureSpan">(resources, ids)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">buildResourceId = function (resources, ids) {
+  if (ids.length == 1)
+    return ids[0];
+
+  resources = resources.slice(0);
+  ids = Array.prototype.slice.apply(ids); // ids might be an arguments object.
+
+  //
+  // Director is for some reason adding a function to the end of the handler arguments.
+  // this is a temporary workaround.
+  //
+  if (typeof ids[ids.length - 1] == &#x27;function&#x27;)
+    ids.pop();
+
+  if (resources.length == (ids.length))
+    resources.pop();
+
+  return resources.reverse().concat(ids).join(&#x27;/&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.restful.createRouter" id="apidoc.element.restful.createRouter">
+        function <span class="apidocSignatureSpan">restful.</span>createRouter
+        <span class="apidocSignatureSpan">(resource, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">createRouter = function (resource, options) {
+  return new ResourcefulRouter(resource, options);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.restful.createServer" id="apidoc.element.restful.createServer">
+        function <span class="apidocSignatureSpan">restful.</span>createServer
+        <span class="apidocSignatureSpan">(resources, options, handler)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">createServer = function (resources, options, handler) {
+  var router = exports.createRouter(resources, options),
+  server = http.createServer(function (req, res) {
+    req.chunks = [];
+    req.on(&#x27;data&#x27;, function (chunk) {
+      req.chunks.push(chunk.toString());
+    });
+
+    router.dispatch(req, res, function (err) {
+      if (err) {
+        //
+        // TODO: Dont always respond with 404
+        //
+        res.writeHead(404);
+        res.end();
+      }
+      console.log(&#x27;Served &#x27; + req.url);
+    });
+  });
+
+  server.router = router;
+  return server;
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.restful.extendRouter" id="apidoc.element.restful.extendRouter">
+        function <span class="apidocSignatureSpan">restful.</span>extendRouter
+        <span class="apidocSignatureSpan">(router, resources, options, respond)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">extendRouter = function (router, resources, options, respond) {
+  options = options || {};
+  //
+  // Remark: If resource.restful has been set to &#x22;true&#x22;,
+  // use default options
+  //
+  if(typeof options === &#x22;boolean&#x22; &#x26;&#x26; options) {
+    options = {};
+  }
+
+  options.prefix  = options.prefix || &#x27;&#x27;;
+  options.strict  = options.strict || false;
+  options.exposeMethods = options.exposeMethods || true;
+
+  if(typeof options.explore === &#x22;undefined&#x22;) {
+    options.explore = true;
+  }
+
+  respond = respond || respondWithResult;
+
+  if (!Array.isArray(resources)){
+    resources = [resources];
+  }
+
+  router.path(options.prefix, function() {
+    var self = this;
+
+    if (options.explore) {
+      //
+      // Bind GET / to a generic explorer view of routing map ( using `director-explorer` )
+      //
+      this.get(&#x27;/&#x27;, function () {
+        var rsp = &#x27;&#x27;;
+        //
+        // Remark: Output the basic routing map for every resource using https://github.com/flatiron/director-reflector
+        //
+        rsp += de.table(self);
+        this.res.end(rsp);
+      });
+    } else {
+      this.get(&#x27;/&#x27;, function (_id) {
+        var res = this.res,
+            req = this.req;
+        if (!options.strict) {
+          preprocessRequest(req, resources, &#x27;index&#x27;);
+        }
+        respond(req, res, 200, &#x27;&#x27;, resources);
+      });
+    }
+    _extend(this, resources, options, respond);
+  })
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.restful.init" id="apidoc.element.restful.init">
+        function <span class="apidocSignatureSpan">restful.</span>init
+        <span class="apidocSignatureSpan">(done)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">init = function (done) {
+  done();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.restful.ResourcefulRouter" id="apidoc.module.restful.ResourcefulRouter">module restful.ResourcefulRouter</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.restful.ResourcefulRouter.ResourcefulRouter" id="apidoc.element.restful.ResourcefulRouter.ResourcefulRouter">
+        function <span class="apidocSignatureSpan">restful.</span>ResourcefulRouter
+        <span class="apidocSignatureSpan">(resource, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">ResourcefulRouter = function (resource, options) {
+  options = options || {};
+
+  //
+  // ResourcefulRouter inherits from director.http.Router
+  //
+  director.http.Router.call(this, options);
+
+  this.resource = resource;
+  this.strict = options.strict || false;
+
+  exports.extendRouter(this, resource, options);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.restful.ResourcefulRouter.super_" id="apidoc.element.restful.ResourcefulRouter.super_">
+        function <span class="apidocSignatureSpan">restful.ResourcefulRouter.</span>super_
+        <span class="apidocSignatureSpan">(routes)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">super_ = function (routes) {
+  //
+  // ### Extend the `Router` prototype with all of the RFC methods.
+  //
+  this.params   = {};
+  this.routes   = {};
+  this.methods  = [&#x27;on&#x27;, &#x27;after&#x27;, &#x27;before&#x27;];
+  this.scope    = [];
+  this._methods = {};
+  this.recurse = &#x27;forward&#x27;;
+  this._attach = [];
+
+  this.extend(exports.methods.concat([&#x27;before&#x27;, &#x27;after&#x27;]));
+  this.configure();
+  this.mount(routes || {});
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.restful.ResourcefulRouter.super_" id="apidoc.module.restful.ResourcefulRouter.super_">module restful.ResourcefulRouter.super_</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.restful.ResourcefulRouter.super_.super_" id="apidoc.element.restful.ResourcefulRouter.super_.super_">
+        function <span class="apidocSignatureSpan">restful.ResourcefulRouter.</span>super_
+        <span class="apidocSignatureSpan">(routes)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">super_ = function (routes) {
+  this.params   = {};
+  this.routes   = {};
+  this.methods  = [&#x27;on&#x27;, &#x27;after&#x27;, &#x27;before&#x27;];
+  this.scope    = [];
+  this._methods = {};
+
+  this.configure();
+  this.mount(routes || {});
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.restful.ResourcefulRouter.super_.prototype" id="apidoc.module.restful.ResourcefulRouter.super_.prototype">module restful.ResourcefulRouter.super_.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.restful.ResourcefulRouter.super_.prototype.attach" id="apidoc.element.restful.ResourcefulRouter.super_.prototype.attach">
+        function <span class="apidocSignatureSpan">restful.ResourcefulRouter.super_.prototype.</span>attach
+        <span class="apidocSignatureSpan">(func)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">attach = function (func) {
+  this._attach.push(func);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.restful.ResourcefulRouter.super_.prototype.configure" id="apidoc.element.restful.ResourcefulRouter.super_.prototype.configure">
+        function <span class="apidocSignatureSpan">restful.ResourcefulRouter.super_.prototype.</span>configure
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">configure = function (options) {
+  options = options || {};
+
+  // useful when using connect&#x27;s bodyParser
+  this.stream = options.stream || false;
+
+  return BaseRouter.prototype.configure.call(this, options);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.restful.ResourcefulRouter.super_.prototype.dispatch" id="apidoc.element.restful.ResourcefulRouter.super_.prototype.dispatch">
+        function <span class="apidocSignatureSpan">restful.ResourcefulRouter.super_.prototype.</span>dispatch
+        <span class="apidocSignatureSpan">(req, res, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">dispatch = function (req, res, callback) {
+  //
+  // Dispatch `HEAD` requests to `GET`
+  //
+  var method = req.method === &#x27;HEAD&#x27; ? &#x27;get&#x27; : req.method.toLowerCase(),
+      thisArg = { req: req, res: res },
+      self = this,
+      contentType,
+      runlist,
+      stream,
+      error,
+      fns,
+      url;
+
+  //
+  // Trap bad URLs from `decodeUri`
+  //
+  try { url = decodeURI(req.url.split(&#x27;?&#x27;, 1)[0]); }
+  catch (ex) { url = null }
+
+  if (url &#x26;&#x26; this._hasAccepts) {
+    contentType = req.headers[&#x27;content-type&#x27;];
+    fns = this.traverse(method, url, this.routes, &#x27;&#x27;, function (route) {
+      return !route.accept || route.accept.some(function (a) {
+        return a.test(contentType);
+      });
+    });
+  }
+  else if (url) {
+    fns = this.traverse(method, url, this.routes, &#x27;&#x27;);
+  }
+
+  if (this._attach) {
+    for (var i = 0; i &#x3c; this._attach.length; i++) {
+      this._attach[i].call(thisArg);
+    }
+  }
+
+  if (!fns || fns.length === 0) {
+    error = new exports.NotFound(&#x27;Could not find path: &#x27; + req.url);
+    if (typeof this.notfound === &#x27;function&#x27;) {
+      this.notfound.call(thisArg, callback);
+    }
+    else if (callback) {
+      callback.call(thisArg, error, req, res);
+    }
+    return false;
+  }
+
+  if (this.recurse === &#x27;forward&#x27;) {
+    fns = fns.reverse();
+  }
+
+  runlist = this.runlist(fns);
+  stream  = this.stream || runlist.some(function (fn) { return fn.stream === true; });
+
+  function parseAndInvoke() {
+    error = self.parse(req);
+    if (error) {
+      if (callback) {
+        callback.call(thisArg, error, req, res);
+      }
+      return false;
+    }
+
+    self.invoke(runlist, thisArg, callback);
+  }
+
+  if (!stream) {
+    //
+    // If there is no streaming required on any of the functions on the
+    // way to `path`, then attempt to parse the fully buffered request stream
+    // once it has emitted the `end` event.
+    //
+    if (req.readable) {
+      //
+      // If the `http.ServerRequest` is still readable, then await
+      // the end event and then continue
+      //
+      req.once(&#x27;end&#x27;, parseAndInvoke);
+      // Streams2 requires us to start the stream if we&#x27;re not explicitly
+      // reading from it.
+      req.resume();
+    }
+    else {
+      //
+      // Otherwise, just parse the body now.
+      //
+      parseAndInvoke();
+    }
+  }
+  else {
+    this.invoke(runlist, thisArg, callback);
+  }
+
+  return true;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.restful.ResourcefulRouter.super_.prototype.on" id="apidoc.element.restful.ResourcefulRouter.super_.prototype.on">
+        function <span class="apidocSignatureSpan">restful.ResourcefulRouter.super_.prototype.</span>on
+        <span class="apidocSignatureSpan">(method, path)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">on = function (method, path) {
+  var args = Array.prototype.slice.call(arguments, 2),
+      route = args.pop(),
+      options = args.pop(),
+      accept;
+
+  if (options) {
+    if (options.stream) {
+      route.stream = true;
+    }
+
+    if (options.accept) {
+      this._hasAccepts = true;
+      accept = options.accept;
+      route.accept = (Array.isArray(accept) ? accept : [accept]).map(function (a) {
+        return typeof a === &#x27;string&#x27; ? RegExp(a) : a;
+      });
+    }
+  }
+
+  if (typeof path !== &#x27;string&#x27; &#x26;&#x26; !path.source) {
+    path = &#x27;&#x27;;
+  }
+
+  BaseRouter.prototype.on.call(this, method, path, route);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.restful.ResourcefulRouter.super_.prototype.parse" id="apidoc.element.restful.ResourcefulRouter.super_.prototype.parse">
+        function <span class="apidocSignatureSpan">restful.ResourcefulRouter.super_.prototype.</span>parse
+        <span class="apidocSignatureSpan">(req)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">parse = function (req) {
+  function mime(req) {
+    var str = req.headers[&#x27;content-type&#x27;] || &#x27;&#x27;;
+    return str.split(&#x27;;&#x27;)[0];
+  }
+
+  var parser = this.parsers[mime(req)],
+      body;
+
+  if (parser) {
+    req.body = req.body || &#x27;&#x27;;
+
+    if (req.chunks) {
+      req.chunks.forEach(function (chunk) {
+        req.body += chunk;
+      });
+    }
+
+    if (&#x27;string&#x27; === typeof req.body) {
+      try {
+        req.body = req.body &#x26;&#x26; req.body.length
+          ? parser(req.body)
+          : {};
+      }
+      catch (err) {
+        return new exports.BadRequest(&#x27;Malformed data&#x27;);
+      }
+    }
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.restful.ResourcefulRouter.super_.prototype.attach" id="apidoc.module.restful.ResourcefulRouter.super_.prototype.attach">module restful.ResourcefulRouter.super_.prototype.attach</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.restful.ResourcefulRouter.super_.prototype.attach.attach" id="apidoc.element.restful.ResourcefulRouter.super_.prototype.attach.attach">
+        function <span class="apidocSignatureSpan">restful.ResourcefulRouter.super_.prototype.</span>attach
+        <span class="apidocSignatureSpan">(func)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">attach = function (func) {
+  this._attach.push(func);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.restful.ResourcefulRouter.super_.prototype.configure" id="apidoc.module.restful.ResourcefulRouter.super_.prototype.configure">module restful.ResourcefulRouter.super_.prototype.configure</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.restful.ResourcefulRouter.super_.prototype.configure.configure" id="apidoc.element.restful.ResourcefulRouter.super_.prototype.configure.configure">
+        function <span class="apidocSignatureSpan">restful.ResourcefulRouter.super_.prototype.</span>configure
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">configure = function (options) {
+  options = options || {};
+
+  // useful when using connect&#x27;s bodyParser
+  this.stream = options.stream || false;
+
+  return BaseRouter.prototype.configure.call(this, options);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.restful.ResourcefulRouter.super_.prototype.dispatch" id="apidoc.module.restful.ResourcefulRouter.super_.prototype.dispatch">module restful.ResourcefulRouter.super_.prototype.dispatch</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.restful.ResourcefulRouter.super_.prototype.dispatch.dispatch" id="apidoc.element.restful.ResourcefulRouter.super_.prototype.dispatch.dispatch">
+        function <span class="apidocSignatureSpan">restful.ResourcefulRouter.super_.prototype.</span>dispatch
+        <span class="apidocSignatureSpan">(req, res, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">dispatch = function (req, res, callback) {
+  //
+  // Dispatch `HEAD` requests to `GET`
+  //
+  var method = req.method === &#x27;HEAD&#x27; ? &#x27;get&#x27; : req.method.toLowerCase(),
+      thisArg = { req: req, res: res },
+      self = this,
+      contentType,
+      runlist,
+      stream,
+      error,
+      fns,
+      url;
+
+  //
+  // Trap bad URLs from `decodeUri`
+  //
+  try { url = decodeURI(req.url.split(&#x27;?&#x27;, 1)[0]); }
+  catch (ex) { url = null }
+
+  if (url &#x26;&#x26; this._hasAccepts) {
+    contentType = req.headers[&#x27;content-type&#x27;];
+    fns = this.traverse(method, url, this.routes, &#x27;&#x27;, function (route) {
+      return !route.accept || route.accept.some(function (a) {
+        return a.test(contentType);
+      });
+    });
+  }
+  else if (url) {
+    fns = this.traverse(method, url, this.routes, &#x27;&#x27;);
+  }
+
+  if (this._attach) {
+    for (var i = 0; i &#x3c; this._attach.length; i++) {
+      this._attach[i].call(thisArg);
+    }
+  }
+
+  if (!fns || fns.length === 0) {
+    error = new exports.NotFound(&#x27;Could not find path: &#x27; + req.url);
+    if (typeof this.notfound === &#x27;function&#x27;) {
+      this.notfound.call(thisArg, callback);
+    }
+    else if (callback) {
+      callback.call(thisArg, error, req, res);
+    }
+    return false;
+  }
+
+  if (this.recurse === &#x27;forward&#x27;) {
+    fns = fns.reverse();
+  }
+
+  runlist = this.runlist(fns);
+  stream  = this.stream || runlist.some(function (fn) { return fn.stream === true; });
+
+  function parseAndInvoke() {
+    error = self.parse(req);
+    if (error) {
+      if (callback) {
+        callback.call(thisArg, error, req, res);
+      }
+      return false;
+    }
+
+    self.invoke(runlist, thisArg, callback);
+  }
+
+  if (!stream) {
+    //
+    // If there is no streaming required on any of the functions on the
+    // way to `path`, then attempt to parse the fully buffered request stream
+    // once it has emitted the `end` event.
+    //
+    if (req.readable) {
+      //
+      // If the `http.ServerRequest` is still readable, then await
+      // the end event and then continue
+      //
+      req.once(&#x27;end&#x27;, parseAndInvoke);
+      // Streams2 requires us to start the stream if we&#x27;re not explicitly
+      // reading from it.
+      req.resume();
+    }
+    else {
+      //
+      // Otherwise, just parse the body now.
+      //
+      parseAndInvoke();
+    }
+  }
+  else {
+    this.invoke(runlist, thisArg, callback);
+  }
+
+  return true;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.restful.ResourcefulRouter.super_.prototype.on" id="apidoc.module.restful.ResourcefulRouter.super_.prototype.on">module restful.ResourcefulRouter.super_.prototype.on</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.restful.ResourcefulRouter.super_.prototype.on.on" id="apidoc.element.restful.ResourcefulRouter.super_.prototype.on.on">
+        function <span class="apidocSignatureSpan">restful.ResourcefulRouter.super_.prototype.</span>on
+        <span class="apidocSignatureSpan">(method, path)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">on = function (method, path) {
+  var args = Array.prototype.slice.call(arguments, 2),
+      route = args.pop(),
+      options = args.pop(),
+      accept;
+
+  if (options) {
+    if (options.stream) {
+      route.stream = true;
+    }
+
+    if (options.accept) {
+      this._hasAccepts = true;
+      accept = options.accept;
+      route.accept = (Array.isArray(accept) ? accept : [accept]).map(function (a) {
+        return typeof a === &#x27;string&#x27; ? RegExp(a) : a;
+      });
+    }
+  }
+
+  if (typeof path !== &#x27;string&#x27; &#x26;&#x26; !path.source) {
+    path = &#x27;&#x27;;
+  }
+
+  BaseRouter.prototype.on.call(this, method, path, route);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.restful.ResourcefulRouter.super_.prototype.parse" id="apidoc.module.restful.ResourcefulRouter.super_.prototype.parse">module restful.ResourcefulRouter.super_.prototype.parse</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.restful.ResourcefulRouter.super_.prototype.parse.parse" id="apidoc.element.restful.ResourcefulRouter.super_.prototype.parse.parse">
+        function <span class="apidocSignatureSpan">restful.ResourcefulRouter.super_.prototype.</span>parse
+        <span class="apidocSignatureSpan">(req)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">parse = function (req) {
+  function mime(req) {
+    var str = req.headers[&#x27;content-type&#x27;] || &#x27;&#x27;;
+    return str.split(&#x27;;&#x27;)[0];
+  }
+
+  var parser = this.parsers[mime(req)],
+      body;
+
+  if (parser) {
+    req.body = req.body || &#x27;&#x27;;
+
+    if (req.chunks) {
+      req.chunks.forEach(function (chunk) {
+        req.body += chunk;
+      });
+    }
+
+    if (&#x27;string&#x27; === typeof req.body) {
+      try {
+        req.body = req.body &#x26;&#x26; req.body.length
+          ? parser(req.body)
+          : {};
+      }
+      catch (err) {
+        return new exports.BadRequest(&#x27;Malformed data&#x27;);
+      }
+    }
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.restful.ResourcefulRouter.super_.prototype.parsers" id="apidoc.module.restful.ResourcefulRouter.super_.prototype.parsers">module restful.ResourcefulRouter.super_.prototype.parsers</a></h1>
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.restful.ResourcefulRouter.super_.super_.prototype" id="apidoc.module.restful.ResourcefulRouter.super_.super_.prototype">module restful.ResourcefulRouter.super_.super_.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.restful.ResourcefulRouter.super_.super_.prototype.configure" id="apidoc.element.restful.ResourcefulRouter.super_.super_.prototype.configure">
+        function <span class="apidocSignatureSpan">restful.ResourcefulRouter.super_.super_.prototype.</span>configure
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">configure = function (options) {
+  options = options || {};
+
+  for (var i = 0; i &#x3c; this.methods.length; i++) {
+    this._methods[this.methods[i]] = true;
+  }
+
+  this.recurse   = typeof options.recurse === &#x27;undefined&#x27; ? this.recurse || false : options.recurse;
+  this.async     = options.async     || false;
+  this.delimiter = options.delimiter || &#x27;\/&#x27;;
+  this.strict    = typeof options.strict === &#x27;undefined&#x27; ? true : options.strict;
+  this.notfound  = options.notfound;
+  this.resource  = options.resource;
+
+  // Client only, but browser.js does not include a super implementation
+  this.history     = (options.html5history &#x26;&#x26; this.historySupport) || false;
+  this.run_in_init = (this.history === true &#x26;&#x26; options.run_handler_in_init !== false);
+  this.convert_hash_in_init = (this.history === true &#x26;&#x26; options.convert_hash_in_init !== false);
+
+  //
+  // TODO: Global once
+  //
+  this.every = {
+    after: options.after || null,
+    before: options.before || null,
+    on: options.on || null
+  };
+
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.restful.ResourcefulRouter.super_.super_.prototype.dispatch" id="apidoc.element.restful.ResourcefulRouter.super_.super_.prototype.dispatch">
+        function <span class="apidocSignatureSpan">restful.ResourcefulRouter.super_.super_.prototype.</span>dispatch
+        <span class="apidocSignatureSpan">(method, path, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">dispatch = function (method, path, callback) {
+  var self = this,
+      fns = this.traverse(method, path.replace(QUERY_SEPARATOR, &#x27;&#x27;), this.routes, &#x27;&#x27;),
+      invoked = this._invoked,
+      after;
+
+  this._invoked = true;
+  if (!fns || fns.length === 0) {
+    this.last = [];
+    if (typeof this.notfound === &#x27;function&#x27;) {
+      this.invoke([this.notfound], { method: method, path: path }, callback);
+    }
+
+    return false;
+  }
+
+  if (this.recurse === &#x27;forward&#x27;) {
+    fns = fns.reverse();
+  }
+
+  function updateAndInvoke() {
+    self.last = fns.after;
+    self.invoke(self.runlist(fns), self, callback);
+  }
+
+  //
+  // Builds the list of functions to invoke from this call
+  // to dispatch conforming to the following order:
+  //
+  // 1. Global after (if any)
+  // 2. After functions from the last call to dispatch
+  // 3. Global before (if any)
+  // 4. Global on (if any)
+  // 5. Matched functions from routing table (`[&#x27;before&#x27;, &#x27;on&#x27;], [&#x27;before&#x27;, &#x27;on`], ...]`)
+  //
+  after = this.every &#x26;&#x26; this.every.after
+    ? [this.every.after].concat(this.last)
+    : [this.last];
+
+  if (after &#x26;&#x26; after.length &#x3e; 0 &#x26;&#x26; invoked) {
+    if (this.async) {
+      this.invoke(after, this, updateAndInvoke);
+    }
+    else {
+      this.invoke(after, this);
+      updateAndInvoke();
+    }
+
+    return true;
+  }
+
+  updateAndInvoke();
+  return true;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.restful.ResourcefulRouter.super_.super_.prototype.extend" id="apidoc.element.restful.ResourcefulRouter.super_.super_.prototype.extend">
+        function <span class="apidocSignatureSpan">restful.ResourcefulRouter.super_.super_.prototype.</span>extend
+        <span class="apidocSignatureSpan">(methods)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">extend = function (methods) {
+  var self = this,
+      len = methods.length,
+      i;
+
+  function extend(method) {
+    self._methods[method] = true;
+    self[method] = function () {
+      var extra = arguments.length === 1
+        ? [method, &#x27;&#x27;]
+        : [method];
+
+      self.on.apply(self, extra.concat(Array.prototype.slice.call(arguments)));
+    };
+  }
+
+  for (i = 0; i &#x3c; len; i++) {
+    extend(methods[i]);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.restful.ResourcefulRouter.super_.super_.prototype.insert" id="apidoc.element.restful.ResourcefulRouter.super_.super_.prototype.insert">
+        function <span class="apidocSignatureSpan">restful.ResourcefulRouter.super_.super_.prototype.</span>insert
+        <span class="apidocSignatureSpan">(method, path, route, parent)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">insert = function (method, path, route, parent) {
+  var methodType,
+      parentType,
+      isArray,
+      nested,
+      part;
+
+  path = path.filter(function (p) {
+    return p &#x26;&#x26; p.length &#x3e; 0;
+  });
+
+  parent = parent || this.routes;
+  part = path.shift();
+  if (/\:|\*/.test(part) &#x26;&#x26; !/\\d|\\w/.test(part)) {
+    part = regifyString(part, this.params);
+  }
+
+  if (path.length &#x3e; 0) {
+    //
+    // If this is not the last part left in the `path`
+    // (e.g. `[&#x27;cities&#x27;, &#x27;new-york&#x27;]`) then recurse into that
+    // child
+    //
+    parent[part] = parent[part] || {};
+    return this.insert(method, path, route, parent[part]);
+  }
+
+  //
+  // If there is no part and the path has been exhausted
+  // and the parent is the root of the routing table,
+  // then we are inserting into the root and should
+  // only dive one level deep in the Routing Table.
+  //
+  if (!part &#x26;&#x26; !path.length &#x26;&#x26; parent === this.routes) {
+    methodType = typeof parent[method];
+
+    switch (methodType) {
+      case &#x27;function&#x27;:
+        parent[method] = [parent[method], route];
+        return;
+      case &#x27;object&#x27;:
+        parent[method].push(route);
+        return;
+      case &#x27;undefined&#x27;:
+        parent[method] = route;
+        return;
+    }
+
+    return;
+  }
+
+  //
+  // Otherwise, we are at the end of our insertion so we should
+  // insert the `route` based on the `method` after getting the
+  // `parent` of the last `part`.
+  //
+  parentType = typeof parent[part];
+  isArray = Array.isArray(parent[part]);
+
+  if (parent[part] &#x26;&#x26; !isArray &#x26;&#x26; parentType == &#x27;object&#x27;) {
+    methodType = typeof parent[part][method];
+
+    switch (methodType) {
+      case &#x27;function&#x27;:
+        parent[part][method] = [parent[part][method], route];
+        return;
+      case &#x27;object&#x27;:
+        parent[part][method].push(route);
+        return;
+      case &#x27;undefined&#x27;:
+        parent[part][method] = route;
+        return;
+    }
+  }
+  else if (parentType == &#x27;undefined&#x27;) {
+    nested = {};
+    nested[method] = route;
+    parent[part] = nested;
+    return;
+  }
+
+  throw new Error(&#x27;Invalid route context: &#x27; + parentType);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.restful.ResourcefulRouter.super_.super_.prototype.invoke" id="apidoc.element.restful.ResourcefulRouter.super_.super_.prototype.invoke">
+        function <span class="apidocSignatureSpan">restful.ResourcefulRouter.super_.super_.prototype.</span>invoke
+        <span class="apidocSignatureSpan">(fns, thisArg, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">invoke = function (fns, thisArg, callback) {
+  var self = this;
+
+  var apply;
+  if (this.async) {
+    apply = function(fn, next){
+      if (Array.isArray(fn)) {
+        return _asyncEverySeries(fn, apply, next);
+      }
+      else if (typeof fn == &#x27;function&#x27;) {
+        fn.apply(thisArg, (fns.captures || []).concat(next));
+      }
+    };
+    _asyncEverySeries(fns, apply, function () {
+      //
+      // Ignore the response here. Let the routed take care
+      // of themselves and eagerly return true.
+      //
+
+      if (callback) {
+        callback.apply(thisArg, arguments);
+      }
+    });
+  }
+  else {
+    apply = function(fn){
+      if (Array.isArray(fn)) {
+        return _every(fn, apply);
+      }
+      else if (typeof fn === &#x27;function&#x27;) {
+        return fn.apply(thisArg, fns.captures || []);
+      }
+      else if (typeof fn === &#x27;string&#x27; &#x26;&#x26; self.resource) {
+        self.resource[fn].apply(thisArg, fns.captures || []);
+      }
+    }
+    _every(fns, apply);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.restful.ResourcefulRouter.super_.super_.prototype.mount" id="apidoc.element.restful.ResourcefulRouter.super_.super_.prototype.mount">
+        function <span class="apidocSignatureSpan">restful.ResourcefulRouter.super_.super_.prototype.</span>mount
+        <span class="apidocSignatureSpan">(routes, path)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">mount = function (routes, path) {
+  if (!routes || typeof routes !== &#x22;object&#x22; || Array.isArray(routes)) {
+    return;
+  }
+
+  var self = this;
+  path = path || [];
+  if (!Array.isArray(path)) {
+    path = path.split(self.delimiter);
+  }
+
+  function insertOrMount(route, local) {
+    var rename = route,
+        parts = route.split(self.delimiter),
+        routeType = typeof routes[route],
+        isRoute = parts[0] === &#x22;&#x22; || !self._methods[parts[0]],
+        event = isRoute ? &#x22;on&#x22; : rename;
+
+    if (isRoute) {
+      rename = rename.slice((rename.match(new RegExp(&#x27;^&#x27; + self.delimiter)) || [&#x27;&#x27;])[0].length);
+      parts.shift();
+    }
+
+    if (isRoute &#x26;&#x26; routeType === &#x27;object&#x27; &#x26;&#x26; !Array.isArray(routes[route])) {
+      local = local.concat(parts);
+      self.mount(routes[route], local);
+      return;
+    }
+
+    if (isRoute) {
+      local = local.concat(rename.split(self.delimiter));
+      local = terminator(local, self.delimiter);
+    }
+
+    self.insert(event, local, routes[route]);
+  }
+
+  for (var route in routes) {
+    if (routes.hasOwnProperty(route)) {
+      insertOrMount(route, path.slice(0));
+    }
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.restful.ResourcefulRouter.super_.super_.prototype.on" id="apidoc.element.restful.ResourcefulRouter.super_.super_.prototype.on">
+        function <span class="apidocSignatureSpan">restful.ResourcefulRouter.super_.super_.prototype.</span>on
+        <span class="apidocSignatureSpan">(method, path, route)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">on = function (method, path, route) {
+  var self = this;
+
+  if (!route &#x26;&#x26; typeof path == &#x27;function&#x27;) {
+    //
+    // If only two arguments are supplied then assume this
+    // `route` was meant to be a generic `on`.
+    //
+    route = path;
+    path = method;
+    method = &#x27;on&#x27;;
+  }
+
+  if (Array.isArray(path)) {
+    return path.forEach(function(p) {
+      self.on(method, p, route);
+    });
+  }
+
+  if (path.source) {
+    path = path.source.replace(/\\\//ig, &#x27;/&#x27;);
+  }
+
+  if (Array.isArray(method)) {
+    return method.forEach(function (m) {
+      self.on(m.toLowerCase(), path, route);
+    });
+  }
+
+  //
+  // ### Split the route up by the delimiter.
+  //
+  path = path.split(new RegExp(this.delimiter));
+
+  //
+  // ### Fix unterminated groups. Fixes #59
+  //
+  path = terminator(path, this.delimiter);
+
+  this.insert(method, this.scope.concat(path), route);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.restful.ResourcefulRouter.super_.super_.prototype.param" id="apidoc.element.restful.ResourcefulRouter.super_.super_.prototype.param">
+        function <span class="apidocSignatureSpan">restful.ResourcefulRouter.super_.super_.prototype.</span>param
+        <span class="apidocSignatureSpan">(token, matcher)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">param = function (token, matcher) {
+  if (token[0] !== &#x27;:&#x27;) {
+    token = &#x27;:&#x27; + token;
+  }
+
+  var compiled = new RegExp(token, &#x27;g&#x27;);
+  this.params[token] = function (str) {
+    return str.replace(compiled, matcher.source || matcher);
+  };
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.restful.ResourcefulRouter.super_.super_.prototype.path" id="apidoc.element.restful.ResourcefulRouter.super_.super_.prototype.path">
+        function <span class="apidocSignatureSpan">restful.ResourcefulRouter.super_.super_.prototype.</span>path
+        <span class="apidocSignatureSpan">(path, routesFn)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">path = function (path, routesFn) {
+  var self = this,
+      length = this.scope.length;
+
+  if (path.source) {
+    path = path.source.replace(/\\\//ig, &#x27;/&#x27;);
+  }
+
+  //
+  // ### Split the route up by the delimiter.
+  //
+  path = path.split(new RegExp(this.delimiter));
+
+  //
+  // ### Fix unterminated groups.
+  //
+  path = terminator(path, this.delimiter);
+  this.scope = this.scope.concat(path);
+
+  routesFn.call(this, this);
+  this.scope.splice(length, path.length);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.restful.ResourcefulRouter.super_.super_.prototype.route" id="apidoc.element.restful.ResourcefulRouter.super_.super_.prototype.route">
+        function <span class="apidocSignatureSpan">restful.ResourcefulRouter.super_.super_.prototype.</span>route
+        <span class="apidocSignatureSpan">(method, path, route)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">route = function (method, path, route) {
+  var self = this;
+
+  if (!route &#x26;&#x26; typeof path == &#x27;function&#x27;) {
+    //
+    // If only two arguments are supplied then assume this
+    // `route` was meant to be a generic `on`.
+    //
+    route = path;
+    path = method;
+    method = &#x27;on&#x27;;
+  }
+
+  if (Array.isArray(path)) {
+    return path.forEach(function(p) {
+      self.on(method, p, route);
+    });
+  }
+
+  if (path.source) {
+    path = path.source.replace(/\\\//ig, &#x27;/&#x27;);
+  }
+
+  if (Array.isArray(method)) {
+    return method.forEach(function (m) {
+      self.on(m.toLowerCase(), path, route);
+    });
+  }
+
+  //
+  // ### Split the route up by the delimiter.
+  //
+  path = path.split(new RegExp(this.delimiter));
+
+  //
+  // ### Fix unterminated groups. Fixes #59
+  //
+  path = terminator(path, this.delimiter);
+
+  this.insert(method, this.scope.concat(path), route);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.restful.ResourcefulRouter.super_.super_.prototype.runlist" id="apidoc.element.restful.ResourcefulRouter.super_.super_.prototype.runlist">
+        function <span class="apidocSignatureSpan">restful.ResourcefulRouter.super_.super_.prototype.</span>runlist
+        <span class="apidocSignatureSpan">(fns)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">runlist = function (fns) {
+  var runlist = this.every &#x26;&#x26; this.every.before
+    ? [this.every.before].concat(_flatten(fns))
+    : _flatten(fns);
+
+  if (this.every &#x26;&#x26; this.every.on) {
+    runlist.push(this.every.on);
+  }
+
+  runlist.captures = fns.captures;
+  runlist.source = fns.source;
+  return runlist;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.restful.ResourcefulRouter.super_.super_.prototype.traverse" id="apidoc.element.restful.ResourcefulRouter.super_.super_.prototype.traverse">
+        function <span class="apidocSignatureSpan">restful.ResourcefulRouter.super_.super_.prototype.</span>traverse
+        <span class="apidocSignatureSpan">(method, path, routes, regexp, filter)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">traverse = function (method, path, routes, regexp, filter) {
+  var fns = [],
+      current,
+      exact,
+      match,
+      next,
+      that;
+
+  function filterRoutes(routes) {
+    if (!filter) {
+      return routes;
+    }
+
+    function deepCopy(source) {
+      var result = [];
+      for (var i = 0; i &#x3c; source.length; i++) {
+        result[i] = Array.isArray(source[i]) ? deepCopy(source[i]) : source[i];
+      }
+      return result;
+    }
+
+    function applyFilter(fns) {
+      for (var i = fns.length - 1; i &#x3e;= 0; i--) {
+        if (Array.isArray(fns[i])) {
+          applyFilter(fns[i]);
+          if (fns[i].length === 0) {
+            fns.splice(i, 1);
+          }
+        }
+        else {
+          if (!filter(fns[i])) {
+            fns.splice(i, 1);
+          }
+        }
+      }
+    }
+
+    var newRoutes = deepCopy(routes);
+    newRoutes.matched = routes.matched;
+    newRoutes.captures = routes.captures;
+    newRoutes.after = routes.after.filter(filter);
+
+    applyFilter(newRoutes);
+
+    return newRoutes;
+  }
+
+  //
+  // Base Case #1:
+  // If we are dispatching from the root
+  // then only check if the method exists.
+  //
+  if (path === this.delimiter &#x26;&#x26; routes[method]) {
+    next = [[routes.before, routes[method]].filter(Boolean)];
+    next.after = [routes.after].filter(Boolean);
+    next.matched = true;
+    next.captures = [];
+    return filterRoutes(next);
+  }
+
+  for (var r in routes) {
+    //
+    // We dont have an exact match, lets explore the tree
+    // in a depth-first, recursive, in-order manner where
+    // order is defined as:
+    //
+    //    [&#x27;before&#x27;, &#x27;on&#x27;, &#x27;&#x3c;method&#x3e;&#x27;, &#x27;after&#x27;]
+    //
+    // Remember to ignore keys (i.e. values of `r`) which
+    // are actual methods (e.g. `on`, `before`, etc), but
+    // which are not actual nested route (i.e. JSON literals).
+    //
+    if (routes.hasOwnProperty(r) &#x26;&#x26; (!this._methods[r] ||
+      this._methods[r] &#x26;&#x26; typeof routes[r] === &#x27;object&#x27; &#x26;&#x26; !Array.isArray(routes[r]))) {
+      //
+      // Attempt to make an exact match for the current route
+      // which is built from the `regexp` that has been built
+      // through recursive iteration.
+      //
+      current = exact = regexp + this.delimiter + r;
+
+      if (!this.strict) {
+        exact += &#x27;[&#x27; + this.delimiter + &#x27;]?&#x27;;
+      }
+
+      match = path.match(new RegExp(&#x27;^&#x27; + exact));
+
+      if (!match) {
+        //
+        // If there isn&#x27;t a `match` then continue. Here, the
+        // `match` is a partial match. e.g.
+        //
+        //    &#x27;/foo/bar/buzz&#x27;.match(/^\/foo/)   // [&#x27;/foo&#x27;]
+        //    &#x27;/no-match/route&#x27;.match(/^\/foo/) // null
+        //
+        continue;
+      }
+
+      if (match[0] &#x26;&#x26; match[0] == path &#x26;&#x26; routes[r][method]) {
+        //
+        // ### Base case 2:
+        // If we had a `match` and the capture is the path itself,
+        // then we have completed our recursion.
+        //
+        next = [[routes[r].before, routes[r][method]].filter(Boolean)];
+        next.after = [routes[r].after].filter(Boolean);
+        next.matched = true;
+        next.captures = match.slice(1);
+
+        if (this.recurse &#x26;&#x26; routes === this.routes) {
+          next.push([routes.before, routes.on].filter(Boolean));
+          next.after = next.after.concat([routes.after].filter(Boolean));
+        }
+
+        return filterRoutes(next);
+      }
+
+      //
+      // ### Recursive case:
+      // If we had a match, but it is not yet an exact match then
+      // attempt to continue matching against the next portion of the
+      // routing table.
+      //
+      next = this.traverse(method, path, routes[r], current);
+
+      //
+      // `next.matched` will be true if the depth-first search of the routing
+      // table from this position was successful.
+      //
+      if (next.matched) {
+        //
+        // Build the in-place tree structure representing the function
+        // in the correct order.
+        //
+        if (next.length &#x3e; 0) {
+          fns = fns.concat(next);
+        }
+
+        if (this.recurse) {
+          fns.push([routes[r].before, routes[r][method]].filter(Boolean));
+          next.after = next.after.concat([routes[r].after].f ...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.restful.attach" id="apidoc.module.restful.attach">module restful.attach</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.restful.attach.attach" id="apidoc.element.restful.attach.attach">
+        function <span class="apidocSignatureSpan">restful.</span>attach
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">attach = function (options) {
+  var app = this;
+  if (app.resources) {
+    Object.keys(app.resources).forEach(function (resource) {
+      resourceful.register(resource, app.resources[resource]);
+    });
+    Object.keys(app.resources).forEach(function (resource) {
+      var _options = options || app.resources[resource].restful || {};
+      //
+      // Only exposes resources as restful if they have set:
+      //
+      //     Resource.restful = true;
+      //     Resource.restful = { param: &#x27;:custom&#x27; };
+      //
+      if (app.resources[resource].restful) {
+        exports.extendRouter(
+          app.router,
+          app.resources[resource],
+          _options,
+          _options.respond
+        );
+      }
+    });
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.restful.buildResourceId" id="apidoc.module.restful.buildResourceId">module restful.buildResourceId</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.restful.buildResourceId.buildResourceId" id="apidoc.element.restful.buildResourceId.buildResourceId">
+        function <span class="apidocSignatureSpan">restful.</span>buildResourceId
+        <span class="apidocSignatureSpan">(resources, ids)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">buildResourceId = function (resources, ids) {
+  if (ids.length == 1)
+    return ids[0];
+
+  resources = resources.slice(0);
+  ids = Array.prototype.slice.apply(ids); // ids might be an arguments object.
+
+  //
+  // Director is for some reason adding a function to the end of the handler arguments.
+  // this is a temporary workaround.
+  //
+  if (typeof ids[ids.length - 1] == &#x27;function&#x27;)
+    ids.pop();
+
+  if (resources.length == (ids.length))
+    resources.pop();
+
+  return resources.reverse().concat(ids).join(&#x27;/&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.restful.createRouter" id="apidoc.module.restful.createRouter">module restful.createRouter</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.restful.createRouter.createRouter" id="apidoc.element.restful.createRouter.createRouter">
+        function <span class="apidocSignatureSpan">restful.</span>createRouter
+        <span class="apidocSignatureSpan">(resource, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">createRouter = function (resource, options) {
+  return new ResourcefulRouter(resource, options);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.restful.createServer" id="apidoc.module.restful.createServer">module restful.createServer</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.restful.createServer.createServer" id="apidoc.element.restful.createServer.createServer">
+        function <span class="apidocSignatureSpan">restful.</span>createServer
+        <span class="apidocSignatureSpan">(resources, options, handler)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">createServer = function (resources, options, handler) {
+  var router = exports.createRouter(resources, options),
+  server = http.createServer(function (req, res) {
+    req.chunks = [];
+    req.on(&#x27;data&#x27;, function (chunk) {
+      req.chunks.push(chunk.toString());
+    });
+
+    router.dispatch(req, res, function (err) {
+      if (err) {
+        //
+        // TODO: Dont always respond with 404
+        //
+        res.writeHead(404);
+        res.end();
+      }
+      console.log(&#x27;Served &#x27; + req.url);
+    });
+  });
+
+  server.router = router;
+  return server;
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.restful.extendRouter" id="apidoc.module.restful.extendRouter">module restful.extendRouter</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.restful.extendRouter.extendRouter" id="apidoc.element.restful.extendRouter.extendRouter">
+        function <span class="apidocSignatureSpan">restful.</span>extendRouter
+        <span class="apidocSignatureSpan">(router, resources, options, respond)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">extendRouter = function (router, resources, options, respond) {
+  options = options || {};
+  //
+  // Remark: If resource.restful has been set to &#x22;true&#x22;,
+  // use default options
+  //
+  if(typeof options === &#x22;boolean&#x22; &#x26;&#x26; options) {
+    options = {};
+  }
+
+  options.prefix  = options.prefix || &#x27;&#x27;;
+  options.strict  = options.strict || false;
+  options.exposeMethods = options.exposeMethods || true;
+
+  if(typeof options.explore === &#x22;undefined&#x22;) {
+    options.explore = true;
+  }
+
+  respond = respond || respondWithResult;
+
+  if (!Array.isArray(resources)){
+    resources = [resources];
+  }
+
+  router.path(options.prefix, function() {
+    var self = this;
+
+    if (options.explore) {
+      //
+      // Bind GET / to a generic explorer view of routing map ( using `director-explorer` )
+      //
+      this.get(&#x27;/&#x27;, function () {
+        var rsp = &#x27;&#x27;;
+        //
+        // Remark: Output the basic routing map for every resource using https://github.com/flatiron/director-reflector
+        //
+        rsp += de.table(self);
+        this.res.end(rsp);
+      });
+    } else {
+      this.get(&#x27;/&#x27;, function (_id) {
+        var res = this.res,
+            req = this.req;
+        if (!options.strict) {
+          preprocessRequest(req, resources, &#x27;index&#x27;);
+        }
+        respond(req, res, 200, &#x27;&#x27;, resources);
+      });
+    }
+    _extend(this, resources, options, respond);
+  })
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.restful.init" id="apidoc.module.restful.init">module restful.init</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.restful.init.init" id="apidoc.element.restful.init.init">
+        function <span class="apidocSignatureSpan">restful.</span>init
+        <span class="apidocSignatureSpan">(done)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">init = function (done) {
+  done();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
