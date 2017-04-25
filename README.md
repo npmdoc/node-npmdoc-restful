@@ -1,6 +1,7 @@
-# npmdoc-restful [![npm package](https://img.shields.io/npm/v/npmdoc-restful.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-restful) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-restful.svg)](https://travis-ci.org/npmdoc/node-npmdoc-restful)
+# npmdoc-restful
 
-api documentation for  restful (v0.4.5)
+#### basic api documentation for  restful (v0.4.5)  [![npm package](https://img.shields.io/npm/v/npmdoc-restful.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-restful) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-restful.svg)](https://travis-ci.org/npmdoc/node-npmdoc-restful)
+
 #### Restful routing using resourceful and director.
 
 [![NPM](https://nodei.co/npm/restful.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/restful)
@@ -87,7 +88,8 @@ api documentation for  restful (v0.4.5)
             },
             "pkgid": "restful@0.4.5"
         }
-    ]
+    ],
+    "bin": {}
 }
 ```
 
